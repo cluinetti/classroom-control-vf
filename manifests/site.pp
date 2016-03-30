@@ -43,7 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include users
-  include skeleton
+  #include skeleton
+  include managed_user.pp
   notify { "Hello, my name is ${::hostname}": }
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
     path => '/usr/local/bin',
