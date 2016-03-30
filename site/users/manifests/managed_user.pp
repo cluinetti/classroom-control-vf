@@ -18,7 +18,8 @@ define users::managed_user (
   mode => '0750',
 }
 file { "${home}/.ssh":
-  ensure => directory, 
+  ensure => directory,
+  home => $home,
   mode => '0700',
 }
 file { "${home}/.vimrc":
