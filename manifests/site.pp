@@ -45,7 +45,6 @@ node default {
   include users
   include managed_user
   include admins
-  lasldasdasd
   #include skeleton
   notify { "Hello, my name is ${::hostname}": }
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
