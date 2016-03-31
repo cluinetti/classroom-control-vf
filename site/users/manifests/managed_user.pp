@@ -25,12 +25,4 @@ file { "${home}/.vimrc":
   replace => false,
   source => 'puppet:///modules/users/vimrc',
 }
-if $ssh_authkey {
-ssh_authorized_key { "${user} default key":
-  ensure => present,
-  user => $user,
-  target => "${home}/.ssh/authorized_keys2",
-  type => $ssh_authkey_type,
-  key => $ssh_authkey,
-  }
 }
