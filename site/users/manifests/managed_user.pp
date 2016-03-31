@@ -1,11 +1,3 @@
-class users::managed_users {
-  users::managed_user { 'tomcat7':
-  home => '/opt/tomcat7',
-  shell => '/sbin/nologin',
-  }
- users::managed_users { ['jose', 'alice', 'chen']" }
-}
-
 define users::managed_user {
   $user $title,
   $shell = '/bin/bash',
