@@ -2,7 +2,7 @@ define users::managed_user (
   $shell = '/bin/bash',
   $home = "/home/${title}",
   $ssh_authkey = undef,
-  $ssh_authkey_type - 'ssh-rsa',
+  $ssh_authkey_type = 'ssh-rsa',
 ) {
   $user = $title
   File {
