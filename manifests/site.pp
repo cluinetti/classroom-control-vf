@@ -43,8 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include users
-  include users::managed_user
-  include users::admins 
+  include managed_user
+  include admins 
   #include skeleton
   notify { "Hello, my name is ${::hostname}": }
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
