@@ -6,13 +6,13 @@ class users::managed_users {
  users::managed_users { ['jose', 'alice', 'chen']" }
 }
 
-define users::managed_user (
+define users::managed_user {
   $user $title,
   $shell = '/bin/bash',
   $home = "/home/${title}",
   $ssh_authkey = undef,
   $ssh_authkey_type - 'ssh-rsa',
-) {
+} {
   $user = $title
   File {
     owner => $user,
