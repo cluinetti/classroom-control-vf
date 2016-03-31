@@ -1,9 +1,9 @@
-define users::managed_user {
+define users::managed_user (
   $shell = '/bin/bash',
   $home = "/home/${title}",
   $ssh_authkey = undef,
   $ssh_authkey_type - 'ssh-rsa',
-} {
+) {
   $user = $title
   File {
     owner => $user,
