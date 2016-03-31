@@ -1,5 +1,4 @@
 define users::managed_user {
-  $user $title,
   $shell = '/bin/bash',
   $home = "/home/${title}",
   $ssh_authkey = undef,
