@@ -18,7 +18,6 @@ define users::managed_user (
 }
 file { "${home}/.ssh":
   ensure => directory,
-  home => $home,
   mode => '0700',
 }
 file { "${home}/.vimrc":
@@ -31,7 +30,7 @@ ssh_authorized_key { "${user} default key":
   ensure => present,
   user => $user,
   target => "${home}/.ssh/authorized_keys2",
-  type => $ssh+authkey_type,
-  key => $ssh authkey,
+  type => $ssh_authkey_type,
+  key => $ssh_authkey,
   }
 }
