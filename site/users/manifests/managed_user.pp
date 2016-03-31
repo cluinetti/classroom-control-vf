@@ -22,10 +22,5 @@ define users::managed_user (
 file { "${home}/.ssh":
   ensure => directory,
   mode => '0700',
-}
-file { "${home}/.vimrc":
-  ensure => file, 
-  replace => false,
-  source => 'puppet:///modules/users/vimrc',
-}
+  }
 }
