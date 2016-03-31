@@ -1,7 +1,7 @@
 define users::managed_user (
   $shell = '/bin/bash',
   $home = "/home/${title}",
-  $group = 'staff',
+  $group = $title,
   $ssh_authkey = undef,
   $ssh_authkey_type = 'ssh-rsa',
 ) {
@@ -13,8 +13,10 @@ define users::managed_user (
    ensure => present,
    shell => $shell,
 }
- file { $home:
-  ensure => directory, 
+ file { "$home/${title}":
+  ensure => directory,
+  owner => $title,
+  group => $group,
   mode => '0750',
 }
 file { "${home}/.ssh":
