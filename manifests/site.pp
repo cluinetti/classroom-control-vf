@@ -46,6 +46,7 @@ node default {
   include users::admins
   #include skeleton
   notify { "Hello, my name is ${::hostname}": }
+  notify { "i just want these labs to be done!": }
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
     path => '/usr/local/bin',
     creates => '/etc/motd',
