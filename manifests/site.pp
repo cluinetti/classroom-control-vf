@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   include users
   include users::admins
-  #include skeleton
+  include skeleton
   notify { "Hello, my name is ${::hostname}": }
   notify { "i just want these labs to be done!": }
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
